@@ -1,0 +1,100 @@
+/* -----BODY DEFAULTS----- */
+
+body {
+  font-family: 'Arial', 'Helvetica Neue', Helvetica, sans-serif;
+  line-height: 2;
+  color:#777777;
+  background-image:url("../images/");
+  background-repeat:repeat;
+  min-height: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+
+
+/* -----BASIC FRAMEWORK CSS----- */
+
+.row {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+.row-vert {
+  flex-direction: column;
+  position: absolute;
+  top: 0;
+  height: 100%;
+}
+
+.right-align {
+  justify-content: flex-end;
+}
+
+.left-align {
+  justify-content: flex-start;
+}
+
+.split {
+  justify-content: space-between;
+}
+
+.col-6 {
+  width: 100%;
+}
+
+.col-4 {
+  width: 66.6666%;
+}
+
+.col-3 {
+  width: 50%;
+}
+
+.col-2 {
+  width: 33.3333%;
+}
+
+.col-1 {
+  width: 16.6666%;
+}
+
+/* -----ELEMENT CSS----- */
+
+
+main {
+    margin: 0 10px 0 10px;
+
+}
+
+
+header {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+/* -----FIXED COMPONENTS----- */
+
+.entireContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+}
+
+
+#stickyFooter {
+  color:#fff;
+  background-color:#894021;
+  background-size: cover;
+  border-top: 6px solid #4A2A09;
+  width: 100%;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: auto;
+}
+
