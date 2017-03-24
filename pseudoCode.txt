@@ -1,0 +1,70 @@
+pseudo code
+
+init game variables
+display ready to begin?
+
+user: click begin
+
+display first question
+display answer choices
+start timer
+set event handler on questions
+
+-------
+
+timer reaches zero
+triggers incorrect answer
+record question with result
+tall incorrect count
+display "sorry you ran out of time"
+display next question
+
+
+-------
+
+user clicks answer
+get click
+stop timer
+turn off event handler
+check answer for correct
+
+display result "correct" or "incorrect"
+tally correct or incorrect counts
+record question with the result
+
+display next question
+display answer choices
+start timer
+turn on event handler
+
+user clicks answer
+get click
+stop timer
+turn off event handler
+check answer for correct
+
+display result "correct" or "incorrect"
+tally correct or incorrect counts
+record question with result
+
+user finishes all questions
+display score
+display questions and results
+
+display option to restart the game
+turn on event handler for restart button
+
+user: restarts->
+init game variables
+
+
+relationships:
+
+question | correct answer
+
+questions | answers
+
+question | result
+
+
+

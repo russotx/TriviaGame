@@ -8,6 +8,7 @@
 
   <!-- reset browser defaults -->
   <link rel="stylesheet" type="text/css" href="./assets/css/reset.css"/>
+  <link href="https://fonts.googleapis.com/css?family=Abril+Fatface|Jim+Nightshade|Libre+Baskerville|Raleway" rel="stylesheet">
 
   <!-- custom stylesheet -->
   <link rel="stylesheet" type="text/css" href="./assets/css/style.css"/>
@@ -17,24 +18,40 @@
 </head>
 <body>
 
-  <header>
-    <h1>Trivia Game</h1>
-  </header>
+  <!-- Entire page row -->
+  <main id="gameBoard" class="row row-vert">
+    <!-- Entire page col -->
+    <div class="col-6">
+
+      <!-- header box row -->
+      <header id="gameTitle" class="row">
+        <div class="overlay">
+          <img src="./assets/images/blantons.jpg" alt="Blantons Whisky">
+          <div id="titleBox" class="col-4">
+            <h1>Whisky Trivia</h1>
+          </div>
+        </div>
+      </header>
+      <article id="gameFeed" class="row">
+        <section id="questions" class="col-6">
+
+        </section>
+        <section id="answers" class="col-6">
+
+          <div id="buttonBox" class="col-6">
+          </div>
+
+        </section>
+        </section>
+      </article>
+    </div>
+    <!-- end of whole page col -->
+  </main>
+<!-- end of whole page row -->
+<!-- no more content -->
 
 
-  <!-- the main body: begin content -->
-  <main class="gameBoard">
 
-
-
-
-<!-- no more content past this piont -->
-</main>
-<!-- footer  -->
-<!--
-<footer id="stickyFooter">
-  <p>&copy;Copyright 2017 Daniel Russo</p>
-</footer> -->
 
 <script src="./assets/javascript/game.js"></script>
 
