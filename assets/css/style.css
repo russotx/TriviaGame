@@ -99,6 +99,14 @@ form {
   line-height: .1;
 }
 
+p {
+  font-family: Raleway;
+  font-size: .7em;
+  color: white;
+  line-height: 1;
+  margin-left: 25px;
+}
+
 #answers p {
   font-family: Raleway;
   font-size: 1.5em;
@@ -184,15 +192,17 @@ form {
 
 #questions {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
   font-family: 'Libre Baskerville', serif;
   font-size: 2em;
   color: white;
   margin-top: 20px;
-  background-color: #83300c;
+  background-color: #be5b1d;
   width: 70%;
   align-self: center;
+  padding: 15px;
+  align-items: center;
   border-bottom: groove 3px #531e07;
   box-shadow: -5px 2px 8px #141414;
 }

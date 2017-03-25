@@ -85,6 +85,7 @@ var userResults =
     QnumIter = 0;
     // build and display begin game button or restart
     $("#questions").html("<h2>Are you ready for some whisky trivia?</h2>");
+    $("#questions").append("<p>you have 15 seconds to answer each question</p>");
     $("#buttonBox").html('<button class="startButton">Bring it on!</button>');
     // listen for click on <button> element
     $("#buttonBox").on("click", ".startButton", function(){
@@ -131,6 +132,9 @@ var userResults =
       // and the label text is the current answer option
       $("form").append("<label for=Q"+i+">"+answerOption+'</label><br>');
     }
+
+    setTimeout(timedOut, 1000*15);
+
      // add event listener for radio buttons to get user response
     $("#buttonBox").on("click","input",function(){
       // record the users choice for the current question
@@ -152,6 +156,15 @@ var userResults =
     } else {
       return false;
     }
+  }
+
+  function timedOut(){
+    $("#buttonBox").off("click","input");
+      // remove the form with questions and the radio buttons
+      // event listener is waiting for
+      $("form").remove();
+      // check the user's answer and display right or wrong
+      displayResult(QnumIter);
   }
 
   // display text depending on whether user is right or wrong
