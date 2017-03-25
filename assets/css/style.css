@@ -99,6 +99,11 @@ form {
   line-height: .1;
 }
 
+#questions h3 {
+  color: black;
+  font-size: 2em;
+}
+
 p {
   font-family: Raleway;
   font-size: .7em;

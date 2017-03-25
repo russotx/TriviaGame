@@ -2,28 +2,28 @@
 
   // array of objects to store questions, possible answers, and the answer key
   var questions =
-    [ { "question"    : "What's my name?",
-        "choices"     : ["Bob","Sam","Daniel","Bill"],
+    [ { "question"    : "What distinguishes bourbon from other whisky?",
+        "choices"     : ["It's made in Kentucky.","Aged at least 6 months.","Made from 51% corn.","It was founded before prohibition."],
         "answerIndex" : 2
       },
-      { "question"    : "What color am I?",
-        "choices"     : ["White","Black","Orange","Green"],
+      { "question"    : "What distinguishes Irish whiskey from others?",
+        "choices"     : ["Aged at least 3 years.","It's only distilled once","It's filtered through peat","It comes in a green bottle."],
         "answerIndex" : 0
       },
-      { "question"    : "What is my favorite food?",
-        "choices"     : ["Spinach","Mushrooms","Pizza","Sushi"],
+      { "question"    : "What is the difference between whisky and vodka?",
+        "choices"     : ["Whisky is brown.","Vodka is from Russia.","Whisky is distilled from grain mash.","Whisky is only made in the USA."],
         "answerIndex" : 2
       },
-      { "question"    : "How many kids do I have?",
-        "choices"     : ["One","Five","Nine","Two"],
+      { "question"    : "How much is the most expensive bottle of whisky?",
+        "choices"     : ["$780","$120,500","$1.2 million","460,000"],
         "answerIndex" : 3
       },
-      { "question"    : "What kind of car do I drive?",
-        "choices"     : ["Ferari","Ford","Bentley","Jeep"],
+      { "question"    : "What distinguishes Scotch from other whisky?",
+        "choices"     : ["It's smokey.","It's from Scotland.","It's aged in oak barrels.","It is made from corn."],
         "answerIndex" : 1
       },
-      { "question"    : "What's my favorite drink?",
-        "choices"     : ["Whisky","Tequila","Gin","Beer"],
+      { "question"    : "How much whisky does the United States consume each year?",
+        "choices"     : ["462 gallons.","1,141 gallons."," 759 gallons.","387 gallons."],
         "answerIndex" : 0
       } ];
 
@@ -63,7 +63,7 @@ var userResults =
      'Nope. Does your liquor of choice involve "malt"?',
      "Wow you're really bad at this.",
      "I really don't know what to say at this point.",
-     "Seriously? Whisky... the brown one. Educate yourself."];
+     "Seriously? Whisky... the brown stuff. Educate yourself."];
 
   var correct =
     ["Yes sir.",
@@ -133,13 +133,39 @@ var userResults =
       $("form").append("<label for=Q"+i+">"+answerOption+'</label><br>');
     }
 
-    setTimeout(timedOut, 1000*15);
+      //------- nested timer functionality for questions -----------
+      //setTimeout(timedOut, 1000*15);
+
+      var timerNumber = 15;
+      var intervalId;
+
+      function run() {
+        intervalID = setInterval(decrement,1000);
+      }
+
+      function decrement() {
+        timerNumber--;
+        if (timerNumber <=10) {
+          $("#questions").find("h3").remove();
+          $("#questions").append("<h3>" + timerNumber + "</h3>");
+
+        }
+
+        if (timerNumber === 0) {
+          clearInterval(intervalID);
+          timedOut();
+        }
+      }
+
+
+      run();
 
      // add event listener for radio buttons to get user response
     $("#buttonBox").on("click","input",function(){
       // record the users choice for the current question
       userResults[qnum].choice = $(this).val();
       event.stopPropagation();
+      clearInterval(intervalID);
       $("#buttonBox").off("click","input");
       // remove the form with questions and the radio buttons
       // event listener is waiting for
