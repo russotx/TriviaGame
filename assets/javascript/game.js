@@ -15,7 +15,7 @@
         "answerIndex" : 2
       },
       { "question"    : "How much is the most expensive bottle of whisky?",
-        "choices"     : ["$780","$120,500","$1.2 million","460,000"],
+        "choices"     : ["$780","$120,500","$1.2 million","$460,000"],
         "answerIndex" : 3
       },
       { "question"    : "What distinguishes Scotch from other whisky?",
